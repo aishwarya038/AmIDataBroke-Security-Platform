@@ -5,3 +5,4 @@ pydantic
 reportlab
 requests
 python-dotenv
+pillow
