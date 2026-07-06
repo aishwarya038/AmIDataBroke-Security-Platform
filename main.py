@@ -36,6 +36,8 @@ from fastapi import FastAPI, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -60,6 +62,7 @@ SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com").strip()
 SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
 
 app = FastAPI(title="AmIDataBroke API")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
@@ -1234,5 +1237,5 @@ def get_metrics():
 
 
 @app.get("/")
-def root():
-    return {"status": "online", "service": "AmIDataBroke API"}
+def read_root():
+    return FileResponse("index.html")
