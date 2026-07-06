@@ -931,12 +931,6 @@ function goToSignupFromPrompt() {
 
 window.addEventListener("DOMContentLoaded", () => {
   switchTab("signin");
-  const session = localStorage.getItem("amidatabroke_session");
-  const email = localStorage.getItem("amidatabroke_email");
-  const name = localStorage.getItem("amidatabroke_name");
-  if (session === "active" && email) {
-    enterDashboard(name || email);
-  }
 });
 
 // ---------------- ANALYZE LOG ----------------
