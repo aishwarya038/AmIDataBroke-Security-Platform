@@ -62,7 +62,7 @@ SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com").strip()
 SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
 
 app = FastAPI(title="AmIDataBroke API")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/assets", StaticFiles(directory="assets"), name="assets")
 
 app.add_middleware(
     CORSMiddleware,
