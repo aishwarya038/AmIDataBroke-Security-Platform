@@ -1,0 +1,13 @@
+{
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.ignoreFiles": [
+        "database.db",
+        "database.db-journal",
+        "database.db-wal",
+        "database.db-shm",
+        "*.db",
+        "*.pyc",
+        "__pycache__/**",
+        ".env"
+    ]
+}

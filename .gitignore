@@ -1,0 +1,5 @@
+# Git Ignore List
+venv/
+__pycache__/
+database.db
+.env
