@@ -599,7 +599,9 @@
 </div>
 
 <script>
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = (location.protocol === "file:" || location.port === "5501")
+     ? "http://127.0.0.1:8000"
+     : window.location.origin;
 let currentTab = "signin";
 let threatChart = null;
 let categoryChart = null;
